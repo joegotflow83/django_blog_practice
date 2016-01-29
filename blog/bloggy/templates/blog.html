@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Welcome to my blog!</h1>
+<h3>Write your own post! Click <a href="/blog/add_post">here</a></h3>
+{% if my_posts %}
+	<ul>
+		{% for post in my_posts %}
+			<h3>{{ post.title }}</h3>
+			<p><em>{{ post.date }}</em></p>
+			<p>{{ post.post }}</p>
+		{% endfor %}
+	</ul>
+{% endif %}
+{% endblock %}
